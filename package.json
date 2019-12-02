@@ -1,6 +1,6 @@
 {
     "name": "@bavary/cli",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "CLI for bavary",
     "author": "Simon Reinisch <trash@reinisch.io>",
     "main": "lib/cli.js",
@@ -39,7 +39,7 @@
         "webpack-cli": "^3.3.10"
     },
     "dependencies": {
-        "@bavary/core": "0.0.13",
+        "@bavary/core": "latest",
         "@types/glob": "^7.1.1",
         "chalk": "^3.0.0",
         "chokidar": "^3.3.0",
