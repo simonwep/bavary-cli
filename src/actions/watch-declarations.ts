@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
-import {compile}          from 'bavary';
-import chokidar           from 'chokidar';
+import {compile, Parser} from '@bavary/core';
+import chokidar          from 'chokidar';
 import * as fs            from 'fs';
 import {setTimeout}       from 'timers';
 import {LEVEL, log}       from '../tools/log';
 import {createPathString} from '../tools/prettify-file-path';
 import {removeFromArray}  from '../tools/remove-from-array';
-import {Parser}           from '../types';
 
 export default (glob: string, cb: (parser: Parser) => void): void => {
     const source: Map<string, string> = new Map();

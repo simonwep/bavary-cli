@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
-import {compile}           from 'bavary';
+import {compile, Parser}   from '@bavary/core';
 import {blueBright, green} from 'chalk';
 import * as fs             from 'fs';
 import glob                from 'glob';
 import path                from 'path';
 import {LEVEL, log}        from '../tools/log';
 import {createPathString}  from '../tools/prettify-file-path';
-import {Parser}            from '../types';
 import parse               from './parse';
 import watchDeclarations   from './watch-declarations';
 import watchSource         from './watch-source';

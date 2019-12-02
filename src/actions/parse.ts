@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
+import {Parser}           from '@bavary/core';
 import {green}            from 'chalk';
 import * as fs            from 'fs';
 import {LEVEL, log}       from '../tools/log';
 import {createPathString} from '../tools/prettify-file-path';
-import {Parser}           from '../types';
 
 export default (source = '', parser: Parser | null, output?: string, prettify?: boolean): void => {
     if (parser) {

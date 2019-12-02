@@ -8,6 +8,26 @@ module.exports = {
     mode: 'production',
     target: 'node',
 
+    entry: {
+        'cli.js': './src/index.ts'
+    },
+
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+
+    output: {
+        filename: '[name]',
+        path: `${__dirname}/lib`
+    },
+
+    externals: {
+        glob: 'require("glob")',
+        chalk: 'require("chalk")',
+        chokidar: 'require("chokidar")',
+        commander: 'require("commander")'
+    },
+
     module: {
         rules: [
             {
@@ -19,27 +39,6 @@ module.exports = {
                 ]
             }
         ]
-    },
-
-    resolve: {
-        extensions: ['.ts', '.js']
-    },
-
-    entry: {
-        'cli.js': './src/index.ts'
-    },
-
-    output: {
-        filename: '[name]',
-        path: `${__dirname}/lib`
-    },
-
-    externals: {
-        glob: 'require("glob")',
-        chalk: 'require("chalk")',
-        bavary: 'require("bavary")',
-        chokidar: 'require("chokidar")',
-        commander: 'require("commander")'
     },
 
     plugins: [

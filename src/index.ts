@@ -1,11 +1,10 @@
 /* eslint-disable no-console */
-import {version}         from 'bavary';
+import {version}         from '@bavary/core';
 import {blueBright, red} from 'chalk';
 import program           from 'commander';
 import * as fs           from 'fs';
 import path              from 'path';
 import compilation       from './actions/compilation';
-
 
 program
     .name('bvc')
