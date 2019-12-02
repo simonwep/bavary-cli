@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+    - "stable"
+
+install:
+    - npm ci
+
+script:
+    - npm run build
+    - npm run lint
+
+cache:
+    directories:
+        - "node_modules"

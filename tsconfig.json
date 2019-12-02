@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "lib": ["esnext", "dom"],
+        "module": "commonjs",
+        "sourceMap": true,
+        "target": "es6",
+        "strict": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
