@@ -1,14 +1,15 @@
 /* eslint-disable no-console */
-import {compile, Parser} from '@bavary/core';
-import chokidar          from 'chokidar';
-import * as fs            from 'fs';
-import {setTimeout}       from 'timers';
-import {LEVEL, log}       from '../tools/log';
-import {createPathString} from '../tools/prettify-file-path';
-import {removeFromArray}  from '../tools/remove-from-array';
+import {compile, compileChunk, Parser} from '@bavary/core';
+import {Declaration}                   from '@bavary/core/src/core/ast/types';
+import chokidar                        from 'chokidar';
+import * as fs                         from 'fs';
+import {setTimeout}                    from 'timers';
+import {LEVEL, log}                    from '../tools/log';
+import {createPathString}              from '../tools/prettify-file-path';
+import {removeFromArray}               from '../tools/remove-from-array';
 
 export default (glob: string, cb: (parser: Parser) => void): void => {
-    const source: Map<string, string> = new Map();
+    const source: Map<string, Array<Declaration>> = new Map();
 
     /* eslint-disable @typescript-eslint/no-explicit-any */
     const erroredFiles: Array<string> = [];
@@ -24,8 +25,8 @@ export default (glob: string, cb: (parser: Parser) => void): void => {
         }
 
         try {
-            log('Update source...', LEVEL.INFO);
-            parser = compile(fullSource.join(''));
+            log('Compile...', LEVEL.INFO);
+            parser = compile(fullSource);
         } catch (e) {
             log('Failed to compile sources', LEVEL.ERROR);
             console.log(e.message);
@@ -40,7 +41,7 @@ export default (glob: string, cb: (parser: Parser) => void): void => {
         const defs = fs.readFileSync(file, 'utf8');
 
         try {
-            source.set(file, defs);
+            source.set(file, compileChunk(defs));
 
             // File contains no more errors
             if (removeFromArray(erroredFiles, file)) {

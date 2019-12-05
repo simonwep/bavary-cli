@@ -21,7 +21,7 @@
         "bin",
         "src"
     ],
-    "homepage": "https://github.com/Simonwep/bavary-cli#readme",
+    "homepage": "https://github.com/Simonwep/bavary#readme",
     "repository": "github:Simonwep/bavary-cli",
     "bugs": "https://github.com/Simonwep/bavary-cli/issues",
     "devDependencies": {
