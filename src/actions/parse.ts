@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import {Parser}           from '@bavary/core';
+import {Parser}           from '@bavary/core/lib/types/compiler/types';
 import {green}            from 'chalk';
 import * as fs            from 'fs';
 import {LEVEL, log}       from '../tools/log';

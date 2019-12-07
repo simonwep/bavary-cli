@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import {compile, Parser}   from '@bavary/core';
+import {compile}           from '@bavary/core';
+import {Parser}            from '@bavary/core/lib/types/compiler/types';
 import {blueBright, green} from 'chalk';
 import * as fs             from 'fs';
 import glob                from 'glob';
@@ -11,7 +12,7 @@ import watchDeclarations   from './watch-declarations';
 import watchSource         from './watch-source';
 
 /**
- * Responsible for compilatation and watching source-files
+ * Responsible for compilation and watching source-files
  * @param input
  * @param globSource
  * @param watch

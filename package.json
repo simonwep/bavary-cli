@@ -14,7 +14,8 @@
     },
     "scripts": {
         "build": "webpack",
-        "lint": "eslint src/**/*.ts --fix"
+        "lint": "eslint src/**/*.ts --fix",
+        "test:lint": "eslint src/**/*.ts"
     },
     "files": [
         "lib",
@@ -39,8 +40,8 @@
         "webpack-cli": "^3.3.10"
     },
     "dependencies": {
-        "@bavary/core": "latest",
         "@types/glob": "^7.1.1",
+        "@bavary/core": "latest",
         "chalk": "^3.0.0",
         "chokidar": "^3.3.0",
         "commander": "^4.0.1",
