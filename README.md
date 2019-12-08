@@ -41,11 +41,11 @@ If no output file is specified (via `--output`) it'll print the result to the co
 
 | Flag | Explanation | Example |
 | ---- | ----------- | ------- |
-| `-w, --watch` | Watches source-files matched by `[files]` | `$ bva src/**/*.bv input.txt --watch` |
-| `-v, --version` | Prints the current version | `$ bva --version` |
-| `-o, --output <file>` | Write results to disk | `$ bva --output result.json` |
-| `-p, --prettify` | Prettify result (Works only in combination with `--output`)  | `$ bva --output result.json --prettify` |
-| `-h, --help` | Shows usage info | `$ bva --help` |
+| `-w, --watch` | Watches source-files matched by `[files]` | `$ bvc src/**/*.bv input.txt --watch` |
+| `-v, --version` | Prints the current version | `$ bvc --version` |
+| `-o, --output <file>` | Write results to disk | `$ bvc --output result.json` |
+| `-p, --prettify` | Prettify result (Works only in combination with `--output`)  | `$ bvc --output result.json --prettify` |
+| `-h, --help` | Shows usage info | `$ bvc --help` |
 
 
 #### Related packages
