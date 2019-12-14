@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
-import {version}         from '@bavary/core';
-import {blueBright, red} from 'chalk';
-import program           from 'commander';
-import * as fs           from 'fs';
-import path              from 'path';
-import compilation       from './actions/compilation';
+import * as core                     from '@bavary/core';
+import * as lib                      from '@bavary/lib';
+import {blueBright, cyanBright, red} from 'chalk';
+import program                       from 'commander';
+import * as fs                       from 'fs';
+import path                          from 'path';
+import compilation                   from './actions/compilation';
 
 program
     .name('bvc')
@@ -13,7 +14,7 @@ program
     .option('-w, --watch', 'Watch and auto-reload on changes')
     .option('-o, --output <file>', 'Write parsing results to file')
     .option('-p, --prettify', 'Prettify result (only active if --output is set)')
-    .version(version, '-v, --version')
+    .version(core.version, '-v, --version')
     .parse(process.argv);
 
 const [globSource, input] = program.args.map(v => path.resolve(v));
@@ -30,7 +31,9 @@ if (!globSource) {
     program.help();
 }
 
-console.log(`Using bavary ${blueBright(`v${version}`)}`);
+console.log(`Using ${cyanBright(`@bavary/core (v${core.version})`)} with ${cyanBright(`@bavary/lib (v${lib.version})`)}`);
+console.log(`Available functions: ${Object.keys(lib.functions).map(v => blueBright(v)).join(', ')}`);
+
 compilation(globSource, input, {
     watch: program.watch,
     output: program.output,

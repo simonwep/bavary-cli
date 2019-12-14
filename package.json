@@ -7,7 +7,16 @@
     "types": "types/index.d.ts",
     "license": "MIT",
     "keywords": [
-        "parser"
+        "bavary",
+        "cli",
+        "parser",
+        "library",
+        "ast",
+        "compiler",
+        "language",
+        "programming-language",
+        "regex",
+        "regexp"
     ],
     "bin": {
         "bvc": "bin/bvc.js"
@@ -15,7 +24,8 @@
     "scripts": {
         "build": "webpack",
         "lint": "eslint src/**/*.ts --fix",
-        "test:lint": "eslint src/**/*.ts"
+        "test:lint": "eslint src/**/*.ts",
+        "install:local": "npm run build&&npm i -g ."
     },
     "files": [
         "lib",
@@ -41,7 +51,8 @@
     },
     "dependencies": {
         "@types/glob": "^7.1.1",
-        "@bavary/core": "0.0.15",
+        "@bavary/core": "latest",
+        "@bavary/lib": "latest",
         "chalk": "^3.0.0",
         "chokidar": "^3.3.0",
         "commander": "^4.0.1",

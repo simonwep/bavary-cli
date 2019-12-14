@@ -2,6 +2,7 @@
 import {compile, compileChunk} from '@bavary/core';
 import {Declaration}           from '@bavary/core/lib/types/ast/types';
 import {Parser}                from '@bavary/core/lib/types/compiler/types';
+import {functions}             from '@bavary/lib';
 import chokidar                from 'chokidar';
 import * as fs                 from 'fs';
 import {setTimeout}            from 'timers';
@@ -27,7 +28,7 @@ export default (glob: string, cb: (parser: Parser) => void): void => {
 
         try {
             log('Compile...', LEVEL.INFO);
-            parser = compile(fullSource);
+            parser = compile(fullSource, {functions});
         } catch (e) {
             log('Failed to compile sources', LEVEL.ERROR);
             console.log(e.message);

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import {compile}           from '@bavary/core';
 import {Parser}            from '@bavary/core/lib/types/compiler/types';
+import {functions}         from '@bavary/lib';
 import {blueBright, green} from 'chalk';
 import * as fs             from 'fs';
 import glob                from 'glob';
@@ -78,7 +79,7 @@ export default (
                 .map(v => fs.readFileSync(v, 'utf8'))
                 .join('\n');
 
-            parse(source, compile(declarations), output, prettify);
+            parse(source, compile(declarations, {functions}), output, prettify);
             console.log(green('\nBye, bye!'));
             process.exit(0);
         });
