@@ -11,7 +11,7 @@
     <a href="https://www.npmjs.com/package/@bavary/cli"><img
        alt="Download count"
        src="https://img.shields.io/npm/dm/@bavary/cli.svg?style=flat-square"></a>
-    <img alt="Current version" src="https://img.shields.io/github/tag/Simonwep/bavary-cli.svg?color=21068E&label=version&style=flat-square">
+    <img alt="Current version" src="https://img.shields.io/github/tag/Simonwep/bavary-cli.svg?color=387EFF&label=version&style=flat-square">
     <a href="https://github.com/sponsors/Simonwep"><img
        alt="Support me"
        src="https://img.shields.io/badge/github-support-387eff.svg?style=flat-square"></a>
@@ -51,4 +51,5 @@ If no output file is specified (via `--output`) it'll print the result to the co
 #### Related packages
 * [@bavary/core](https://github.com/Simonwep/bavary) _- Parser and compiler._
 * [@bavary/cli](https://github.com/Simonwep/bavary-cli) _- CLI with development server._
-* [@bavary/lib](https://github.com/Simonwep/bavary-lib) _- Standard library with extensions for bavary._
+* [@bavary/bavary-lib](https://github.com/Simonwep/bavary-lib) _- Standard library with extensions for bavary._
+* [@bavary/webpack-loader](https://github.com/Simonwep/bavary-webpack-loader) _- Webpack loader for declaration files._
