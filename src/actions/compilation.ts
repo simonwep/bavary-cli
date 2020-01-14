@@ -8,9 +8,9 @@ import glob                from 'glob';
 import path                from 'path';
 import {LEVEL, log}        from '../tools/log';
 import {createPathString}  from '../tools/prettify-file-path';
-import parse               from './parse';
-import watchDeclarations   from './watch-declarations';
-import watchSource         from './watch-source';
+import {parse}             from './parse';
+import {watchDeclarations} from './watch-declarations';
+import {watchSource}       from './watch-source';
 
 /**
  * Responsible for compilation and watching source-files
@@ -20,7 +20,7 @@ import watchSource         from './watch-source';
  * @param output
  * @param prettify
  */
-export default (
+export const compilation = (
     globSource: string, input: string,
     {watch, output, prettify}: {
         watch?: boolean;
@@ -47,7 +47,7 @@ export default (
     console.log();
 
     if (watch) {
-        log('Watching declartions and source file(s)...', LEVEL.INFO);
+        log('Watching declarations and source file(s)...', LEVEL.INFO);
         let storedParser: Parser | null = null;
         let storedSource = '';
 

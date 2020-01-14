@@ -5,7 +5,7 @@ import * as fs            from 'fs';
 import {LEVEL, log}       from '../tools/log';
 import {createPathString} from '../tools/prettify-file-path';
 
-export default (source = '', parser: Parser | null, output?: string, prettify?: boolean): void => {
+export const parse = (source = '', parser: Parser | null, output?: string, prettify?: boolean): void => {
     if (parser) {
         const result = parser(source);
 

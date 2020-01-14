@@ -3,7 +3,7 @@ import * as chokidar from 'chokidar';
 import * as fs       from 'fs';
 import {LEVEL, log}  from '../tools/log';
 
-export default (path: string, cb: (source: string) => void): void => {
+export const watchSource = (path: string, cb: (source: string) => void): void => {
 
     // Watch and recompile declarations
     chokidar.watch(path).on('change', (file: string) => {

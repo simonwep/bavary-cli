@@ -5,7 +5,7 @@ import {blueBright, cyanBright, red} from 'chalk';
 import program                       from 'commander';
 import * as fs                       from 'fs';
 import path                          from 'path';
-import compilation                   from './actions/compilation';
+import {compilation}                 from './actions/compilation';
 
 program
     .name('bvc')
